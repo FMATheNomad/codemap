@@ -1,0 +1,174 @@
+{
+  "name": "codemap",
+  "displayName": "codemap",
+  "description": "Interactive codebase map — understand any codebase in 30 seconds",
+  "version": "0.1.0",
+  "publisher": "FMATheNomad",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#0a0a0b",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FMATheNomad/codemap"
+  },
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Visualization",
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "code map",
+    "dependency graph",
+    "visualization",
+    "codebase",
+    "navigation"
+  ],
+  "activationEvents": [
+    "onView:codemap.map",
+    "onView:codemap.tree",
+    "onCommand:codemap.generateMap",
+    "onStartupFinished"
+  ],
+  "main": "./dist/src/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "codemap.tree",
+          "name": "Code Map",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "codemap.generateMap",
+        "title": "codemap: Generate Map"
+      },
+      {
+        "command": "codemap.refreshMap",
+        "title": "codemap: Refresh Map"
+      },
+      {
+        "command": "codemap.findCircular",
+        "title": "codemap: Find Circular Dependencies"
+      },
+      {
+        "command": "codemap.exportMap",
+        "title": "codemap: Export Map"
+      },
+      {
+        "command": "codemap.toggleMap",
+        "title": "codemap: Toggle Map"
+      },
+      {
+        "command": "codemap.openInMap",
+        "title": "codemap: Open File in Map"
+      },
+      {
+        "command": "codemap.showDependencies",
+        "title": "codemap: Show Dependencies"
+      },
+      {
+        "command": "codemap.focusFile",
+        "title": "codemap: Focus File"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "codemap.generateMap",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m"
+      },
+      {
+        "command": "codemap.refreshMap",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "codemap.openInMap",
+          "group": "codemap",
+          "when": "explorerResourceIsFolder"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "codemap.showDependencies",
+          "group": "codemap",
+          "when": "editorFocus"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "codemap",
+      "properties": {
+        "codemap.maxDepth": {
+          "type": "number",
+          "default": 3,
+          "description": "Max depth for dependency graph"
+        },
+        "codemap.excludePatterns": {
+          "type": "array",
+          "default": [
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/.next/**",
+            "**/__pycache__/**",
+            "**/*.min.*"
+          ],
+          "description": "Glob patterns to exclude"
+        },
+        "codemap.autoGenerateOnOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-generate map when opening new workspace"
+        },
+        "codemap.theme": {
+          "type": "string",
+          "enum": [
+            "dark",
+            "light"
+          ],
+          "default": "dark",
+          "description": "Map color theme"
+        },
+        "codemap.maxNodes": {
+          "type": "number",
+          "default": 10000,
+          "description": "Maximum nodes before showing warning"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./dist/test/run-test.js",
+    "postinstall": "node -e \"try{require('fs').copyFileSync(require.resolve('d3/dist/d3.min.js'),'src/views/webview/d3.min.js')}catch(e){}\""
+  },
+  "dependencies": {
+    "d3": "^7.9.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/node": "^20.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/d3": "^7.4.0",
+    "@vscode/test-electron": "^2.3.0",
+    "typescript": "^5.5.0",
+    "mocha": "^10.0.0"
+  }
+}
