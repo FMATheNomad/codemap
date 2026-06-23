@@ -10,6 +10,7 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/FMATheNomad/codemap/ci.yml?logo=github)](https://github.com/FMATheNomad/codemap/actions)
 [![Sponsor](https://img.shields.io/badge/sponsor-%E2%9D%A4%EF%B8%8F-red?logo=github)](https://github.com/sponsors/FMATheNomad)
 [![OpenCode](https://img.shields.io/badge/OpenCode-%20-6C47FF?logo=opencode)](https://opencode.ai)
+[![skills.sh](https://skills.sh/b/FMATheNomad/codemap)](https://skills.sh/FMATheNomad/codemap)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/FMATheNomad/codemap/pulls)
 
 ---
