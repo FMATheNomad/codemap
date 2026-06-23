@@ -1,0 +1,11 @@
+node_modules
+.vscode
+test
+tsconfig.json
+.gitignore
+.gitattributes
+.vscode-test
+package-lock.json
+yarn.lock
+*.vsix
+media/demo.png

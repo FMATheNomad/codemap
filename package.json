@@ -7,6 +7,10 @@
   "license": "MIT",
   "type": "commonjs",
   "icon": "media/icon.png",
+  "pricing": "Free",
+  "sponsor": {
+    "url": "https://github.com/sponsors/FMATheNomad"
+  },
   "galleryBanner": {
     "color": "#0a0a0b",
     "theme": "dark"
