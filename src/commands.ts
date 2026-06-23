@@ -213,6 +213,7 @@ function showMapPanel(context: vscode.ExtensionContext, mapDataProvider: MapData
     vscode.ViewColumn.Beside,
     {
       enableScripts: true,
+      retainContextWhenHidden: true,
       localResourceRoots: [vscode.Uri.joinPath(context.extensionUri, 'src', 'views', 'webview')],
     }
   );
