@@ -2,7 +2,7 @@
 
 All notable changes to codemap will be documented in this file.
 
-## [0.1.0] - 2024-01-15
+## [0.1.0] - 2026-06-24
 
 ### Added
 - Initial release
