@@ -2,6 +2,27 @@
 
 All notable changes to codemap will be documented in this file.
 
+## [0.2.0] - 2026-06-24
+
+### Added
+- TypeScript 6.0.3 + Node 26 + ES2022 target
+- Full CI workflow with Node 18/20/22/26 matrix
+- CONTRIBUTING.md with PR checklist and code style guide
+- Issue templates (bug report + feature request)
+- GitHub topics (20 tags including solo-founder, code-map)
+- Hero-section sponsor/star CTA for solo founder branding
+- Feature comparison table vs alternatives
+- Problem-Solution narrative structure
+- Mermaid architecture diagram
+- Social share buttons (X/Twitter + Reddit)
+- Roadmap with checkboxes for planned features
+- Dogfooding section (codemap analyzing itself)
+- Saweria.co funding option in FUNDING.yml
+
+### Changed
+- Updated to 2026 ecosystem (TypeScript 6.0, Mocha 11, @vscode/test-electron 3.0)
+- Overhauled README with virality patterns matching FMA OSS repos
+
 ## [0.1.0] - 2026-06-24
 
 ### Added
