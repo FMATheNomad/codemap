@@ -2,9 +2,10 @@
   "name": "codemap",
   "displayName": "codemap",
   "description": "Interactive codebase map — understand any codebase in 30 seconds",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "FMATheNomad",
   "license": "MIT",
+  "type": "commonjs",
   "icon": "media/icon.png",
   "galleryBanner": {
     "color": "#0a0a0b",
@@ -157,18 +158,18 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile",
     "test": "node ./dist/test/run-test.js",
-    "postinstall": "node -e \"try{require('fs').copyFileSync(require.resolve('d3/dist/d3.min.js'),'src/views/webview/d3.min.js')}catch(e){}\""
+    "postinstall": "node -e \"try{const p=require('path').join(require('fs').realpathSync('node_modules/d3/dist'),'d3.min.js');require('fs').copyFileSync(p,'src/views/webview/d3.min.js')}catch(e){console.error('d3 copy:',e.message)}\""
   },
   "dependencies": {
     "d3": "^7.9.0"
   },
   "devDependencies": {
-    "@types/vscode": "^1.96.0",
-    "@types/node": "^20.0.0",
-    "@types/mocha": "^10.0.0",
     "@types/d3": "^7.4.0",
-    "@vscode/test-electron": "^2.3.0",
-    "typescript": "^5.5.0",
-    "mocha": "^10.0.0"
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^26.0.0",
+    "@types/vscode": "^1.96.0",
+    "@vscode/test-electron": "^3.0.0",
+    "mocha": "^11.7.6",
+    "typescript": "^6.0.3"
   }
 }

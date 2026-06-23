@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "ES2020",
+    "module": "node16",
+    "target": "ES2022",
     "outDir": "dist",
-    "lib": ["ES2020"],
+    "lib": ["ES2022"],
     "sourceMap": true,
     "rootDir": ".",
     "strict": true,
@@ -12,7 +12,9 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "types": ["node", "mocha"],
+    "moduleResolution": "node16"
   },
   "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules", ".vscode-test"]
